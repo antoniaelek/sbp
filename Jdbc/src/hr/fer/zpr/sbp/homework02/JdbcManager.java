@@ -28,7 +28,7 @@ public class JdbcManager {
             System.err.println("Pogreška: nije uspjelo "
                     + "učitavanje Informix JDBC driver-a.");
             System.err.println(exception.getMessage());
-            System.exit(-1);
+            return;
         }
 
         // uspostavljanje konekcije
@@ -39,8 +39,7 @@ public class JdbcManager {
             System.out.println("Pogreška: nije uspjelo "
                     + "uspostavljanje konekcije.");
             System.err.printf("%s %s%n", ex.getErrorCode(), ex.getMessage());
-            System.exit(-1);
-        }
+            return;
         return conn;
     }
     
