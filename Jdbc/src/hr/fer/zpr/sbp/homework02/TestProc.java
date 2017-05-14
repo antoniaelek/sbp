@@ -38,7 +38,7 @@ public class TestProc {
       } catch (ClassNotFoundException exception) {
          System.out.println("Pogreška: nije uspjelo učitavanje Informix JDBC driver-a.");
          System.out.println(exception.getMessage());
-         return;
+         return conn;
       }
       
       // uspostavljanje konekcije
@@ -48,7 +48,6 @@ public class TestProc {
       } catch (SQLException exception) {
          System.out.println("Pogreška: nije uspjelo uspostavljanje konekcije.");
          System.out.println(exception.getErrorCode() + " " + exception.getMessage());
-         return;
       }
       return conn;
    }
